@@ -5,6 +5,8 @@
  */
 package lab5;
 
+import java.util.Scanner;
+
 /**
  *
  * @author libin
@@ -16,7 +18,12 @@ public class LAB5 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("");
+       QuestionManager questionManager = new QuestionManager();
+       Scanner input = new Scanner(System.in);
+       String selectQuestion ;
+        System.out.println("Which question you want to check ? Please enter Q1 , Q2Mehtod1 , Q2Method2");
+        selectQuestion = input.next();
+        System.out.println(questionManager.getClass().getMethod(selectQuestion, null));
     }
     
 }
