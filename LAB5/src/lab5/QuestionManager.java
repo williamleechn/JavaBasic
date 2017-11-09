@@ -99,4 +99,31 @@ public class QuestionManager {
         System.out.println(Arrays.toString(list));
     }
 
+    public void Q3() {
+        java.util.Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number of employee");
+        int emp = input.nextInt();
+        int[][] matrix = new int[emp][7];
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < 7; column++) {
+                matrix[row][column] = (int) ((Math.random() * 8) + 1);
+            }
+        }
+
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix[row].length; column++) {
+                System.out.print(matrix[row][column] + " ");
+            }
+            System.out.println();
+        }
+        int[][] matrixResult = new int[emp][0];
+        for (int row = 0; row < matrixResult.length; row++) {
+            int total = 0;
+            for (int column = 0; column < matrix[row].length; column++) {
+                total += matrix[row][column];
+            }
+            System.out.println("Sum work hours for employee  " + row + " :   is   " + total);
+        }
+    }
+
 }

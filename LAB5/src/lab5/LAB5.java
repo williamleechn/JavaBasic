@@ -16,14 +16,31 @@ public class LAB5 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException {
         // TODO code application logic here
-       QuestionManager questionManager = new QuestionManager();
-       Scanner input = new Scanner(System.in);
-       String selectQuestion ;
-        System.out.println("Which question you want to check ? Please enter Q1 , Q2Mehtod1 , Q2Method2");
+        QuestionManager questionManager = new QuestionManager();
+        Scanner input = new Scanner(System.in);
+        String selectQuestion;
+        System.out.println("Which question you want to check ? Please enter Q1 , Q2Method1 , Q2Method2");
         selectQuestion = input.next();
-        System.out.println(questionManager.getClass().getMethod(selectQuestion, null));
+        switch (selectQuestion) {
+            case "Q1":
+                questionManager.Q1();
+                break;
+            case "Q2Method1":
+                questionManager.Q2Method1();
+                break;
+            case "Q2Method2":
+                questionManager.Q2Method2();
+                break;
+            case "Q3":
+                questionManager.Q3();
+                break;
+            default:
+                System.out.println("YO");
+                ;
+                break;
+        }
     }
-    
+
 }
